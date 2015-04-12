@@ -1,17 +1,7 @@
-# Name:
-# Section:
-# 6.189 Project 1: Hangman template
-# hangman_template.py
+# Python Project 1: Hangman
 
-# Import statements: DO NOT delete these! DO NOT write code above this!
 from random import randrange
 from string import *
-dir()
-
-# -----------------------------------
-# Helper code
-# (you don't need to understand this helper code)
-# Import hangman words
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -38,7 +28,6 @@ def load_words():
 # in the program
 words_dict = load_words()
 
-
 # Run get_word() within your program to generate a random secret word
 # by using a line like this within your program:
 # secret_word = get_word()
@@ -49,11 +38,6 @@ def get_word():
     """
     word = words_dict[randrange(0,len(words_dict))]
     return word
-
-
-# end of helper code
-# -----------------------------------
-
 
 # CONSTANTS
 MAX_GUESSES = 6
@@ -71,13 +55,10 @@ def word_guessed():
     global secret_word
     global letters_guessed
 
-    ####### YOUR CODE HERE ######
-
     for val in secret_word:
         if val not in letters_guessed:
             return False
     return True
-
 
 def print_guessed():
     '''
@@ -86,7 +67,6 @@ def print_guessed():
     global secret_word
     global letters_guessed
 
-    ####### YOUR CODE HERE ######
     character_list = ['-'] * len(secret_word)
     for i in range(len(secret_word)):
         if secret_word[i] in letters_guessed:
@@ -276,8 +256,6 @@ def play_hangman():
 
     # Update secret_word. Don't uncomment this line until you get to Step 8.
     # secret_word  = get_word()
-
-    ####### YOUR CODE HERE ######
 
     MAX_GUESSES = 6
     letters_guessed = []
